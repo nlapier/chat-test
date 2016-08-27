@@ -4,7 +4,7 @@ var app = express();
 var http = require("http").Server(app);
 var io = require("socket.io")(http);
 
-var PORT = 4000
+var PORT = process.env.PORT || 4000;
 
 //Route to chat box
 app.get('/', function(req, res){
@@ -30,7 +30,7 @@ io.on('connection', function(socket){
   socket.on('disconnect', function(){
     console.log('user disconnected');
   });
-  
+
 });
 
 
