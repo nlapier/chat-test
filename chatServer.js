@@ -1,8 +1,7 @@
 //Dependencies
 var express = require ("express");
-var app = express();
-var http = require("http").Server(app);
-var io = require("socket.io")(http);
+var app = express().createServer();
+var io = require("socket.io")(app);
 
 var PORT = process.env.PORT || 4000;
 
