@@ -4,6 +4,8 @@
     <title>Socket.IO chat</title>
     <script src="/socket.io/socket.io.js"></script>
     <script  src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+ <!--    <script src="moment.js"></script>
+    <script src="moment-timezone-with-data.js"></script> -->
 
 
 
@@ -32,10 +34,12 @@
       $('form').on("submit", function(){
         
         var chatText = $('#m').val();
-        console.log(chatText);
 
         //socket.emit grabs the message with jQuery and sends the message to the server
         socket.emit('message', chatText);
+        console.log("id: ", socket.id);
+        console.log("room: ", socket.rooms);
+
         //jQuery clears the text input box
         $('#m').val('');
 
@@ -43,7 +47,7 @@
       });
 
       socket.on("message", function(msg){
-        console.log("message received")
+        // console.log("message received")
         $("#messages").append($("<li>").text(msg));
       });
 
