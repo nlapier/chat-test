@@ -6,10 +6,11 @@ var io = require("socket.io")(http);
 
 var PORT = process.env.PORT || 4000;
 
+app.use(express.static('public'));
 //Route to chat box
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/chatIndex.html');
-});
+// app.get('/', function(req, res){
+//   res.sendFile(__dirname + '/chatIndex.html');
+// });
 
 //console.log the chat message
 // io.on('connection', function(socket){
