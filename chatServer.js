@@ -27,27 +27,27 @@ io.on('connection', function(socket){
 
 });
 
-//Route to chat box
-// app.get('/', function(req, res){
-//   res.sendFile(__dirname + '/chatIndex.html');
-// });
+Route to chat box
+app.get('/', function(req, res){
+  res.sendFile(__dirname + '/chatIndex.html');
+});
 
-//console.log the chat message
-// io.on('connection', function(socket){
-//   socket.on('message', function(msg){
-//     console.log('message: ' + msg);
-//   });
-// });
+console.log the chat message
+io.on('connection', function(socket){
+  socket.on('message', function(msg){
+    console.log('message: ' + msg);
+  });
+});
 
-// function sqlChat(chatText, chatUser){	
-//     var chatTime; // = moment.js timestamp
-//     var chatUser; // = user name
-//     var chatObj = {
-//       text: chatText,
-//       time: chatTime,
-//       user: chatUser
-//     }
-// }
+function sqlChat(chatText, chatUser){	
+    var chatTime; // = moment.js timestamp
+    var chatUser; // = user name
+    var chatObj = {
+      text: chatText,
+      time: chatTime,
+      user: chatUser
+    }
+}
 
 
 
